@@ -220,19 +220,19 @@ function changeH1size() {
   const screenWidth = window.innerWidth;
 
   if (screenWidth < 500) {
-    h1.textContent = "Villa Jure";
+    h1.textContent = "Villa Patron";
     titleParagraph.textContent = "Tranquility made timeless";
     journeyTitle.textContent = "Start your dream.";
     galleryParagraph.textContent = "Explore beautiful spaces.";
     galleryTitle.textContent = "Villa's Gallery";
   } else if (screenWidth < 730) {
-    h1.textContent = "Welcome to Villa Jure";
+    h1.textContent = "Welcome to Villa Patron";
     titleParagraph.textContent = "Villa between sea and hills.";
     journeyTitle.textContent = "Your journey starts here.";
     galleryParagraph.textContent =
       "Explore our gallery for beautiful spaces and serenity.";
   } else {
-    h1.textContent = "Experience Luxury at Villa Jure";
+    h1.textContent = "Unwind in Style at Villa Patron";
     titleParagraph.textContent =
       "Your dream getaway awaits in beautiful Kastela";
     journeyTitle.textContent = "Start your unforgettable journey.";
