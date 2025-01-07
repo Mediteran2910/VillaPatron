@@ -1,5 +1,5 @@
 (function () {
-  emailjs.init("publickey");
+  emailjs.init("AN4_T3f-H85b7z8dK");
 })();
 
 function sendEmail() {
@@ -16,7 +16,7 @@ function sendEmail() {
   }
 
   emailjs
-    .send("serviceid", "templateid", {
+    .send("service_iwr0hfb", "template_f6428q8", {
       to_name: "Ana",
       from_name: from_name,
       from_surname: from_surname,
