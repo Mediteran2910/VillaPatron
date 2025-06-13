@@ -11,9 +11,8 @@ const modalPrevButton = document.querySelector("#modal-prev-btn");
 const modalNextButton = document.querySelector("#modal-next-btn");
 
 let currentIndex = 0;
-let startX = 0; // For swipe functionality
+let startX = 0;
 
-// Update the carousel display
 function updateCarousel() {
   carouselItems.forEach((item, index) => {
     item.classList.remove(

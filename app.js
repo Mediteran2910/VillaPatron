@@ -11,9 +11,8 @@ const modalPrevButton = document.querySelector("#modal-prev-btn");
 const modalNextButton = document.querySelector("#modal-next-btn");
 
 let currentIndex = 0;
-let startX = 0; // For swipe functionality
+let startX = 0;
 
-// Update the carousel display
 function updateCarousel() {
   carouselItems.forEach((item, index) => {
     item.classList.remove(
@@ -47,7 +46,6 @@ function updateCarousel() {
   });
 }
 
-// Move to the previous image
 prevButton.addEventListener("click", () => {
   currentIndex =
     (currentIndex - 1 + carouselItems.length) % carouselItems.length;
@@ -59,25 +57,21 @@ nextButton.addEventListener("click", () => {
   updateCarousel();
 });
 
-// Initialize the carousel
 updateCarousel();
 
-// Handle clicking on carousel item to enlarge the image
 carouselItems.forEach((item, index) => {
   item.addEventListener("click", () => {
-    modal.style.display = "flex"; // Show the modal
-    modalImage.src = item.src; // Set the clicked image to the modal
-    currentIndex = index; // Update current index
+    modal.style.display = "flex";
+    modalImage.src = item.src;
+    currentIndex = index;
     updateModalImage();
   });
 });
 
-// Update the modal image based on the current index
 function updateModalImage() {
   modalImage.src = carouselItems[currentIndex].src;
 }
 
-// Modal navigation
 modalPrevButton.addEventListener("click", () => {
   currentIndex =
     (currentIndex - 1 + carouselItems.length) % carouselItems.length;
@@ -89,7 +83,6 @@ modalNextButton.addEventListener("click", () => {
   updateModalImage();
 });
 
-// Swipe for modal
 modalImage.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
 });
@@ -103,7 +96,6 @@ modalImage.addEventListener("touchend", (e) => {
   }
 });
 
-// Swipe for carousel
 carouselTrack.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
 });
@@ -117,19 +109,16 @@ carouselTrack.addEventListener("touchend", (e) => {
   }
 });
 
-// Close the modal
 closeButton.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-// Intersection Observer options
 const options = {
   root: null,
   rootMargin: "0px",
   threshold: 0.3,
 };
 
-// Offerings Animation
 const offeringsTitle = document.querySelector("#offerings-title");
 const firstBlockParagraph = document.querySelector("#first-block p");
 const firstBlockHr = document.querySelector("#first-block hr");
@@ -172,7 +161,6 @@ observer.observe(firstBlockHr);
 firstBlockItems.forEach((item) => observer.observe(item));
 secondBlockItems.forEach((item) => observer.observe(item));
 
-// Gallery Animation
 const gallerySection =
   document.querySelector(".carousel-wrapper").parentElement;
 
@@ -211,7 +199,6 @@ galleryObserver.observe(galleryTitle);
 galleryObserver.observe(galleryParagraph);
 galleryObserver.observe(carouselWrapper);
 
-// Dynamic text adjustment
 function changeH1size() {
   const h1 = document.querySelector("#main-title");
   const titleParagraph = document.getElementById("paragraph-title");
