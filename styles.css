@@ -51,7 +51,7 @@ footer {
 header {
   width: 100%;
   height: 500px;
-  background-image: url("smanjene slike/11.webp"),
+  background-image: url("smanjene-slike-ordered/10.webp"),
     linear-gradient(rgb(0, 19, 51, 0.8), rgba(0, 19, 51, 0.8));
   background-size: cover;
   background-repeat: no-repeat;
@@ -673,7 +673,7 @@ hr {
 
 .journey-wrapper {
   background-image: linear-gradient(rgba(0, 19, 51, 0.8), rgba(0, 19, 51, 0.8)),
-    url("smanjene slike/9.webp");
+    url("smanjene-slike-ordered/1.webp");
 
   width: 100%;
   height: 500px;
@@ -694,11 +694,13 @@ hr {
   margin: 20px;
 }
 
-.journey-wrapper p {
+.journey-wrapper p,
+.journey-wrapper a {
   font-weight: 400;
   color: var(--paragraphs-color-light);
   margin-bottom: 5px;
   font-size: 1.25rem;
+  text-decoration: none;
 }
 
 .journey-wrapper p:nth-of-type(2) {
