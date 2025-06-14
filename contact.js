@@ -43,9 +43,7 @@ const phoneInput = document.getElementById("phone");
 const message = document.getElementById("message");
 const formButton = document.getElementsByClassName("send-email-btn");
 
-const respondMessage = async (response, responseData) => {
-  const messageElement = document.createElement("p");
-  messageElement.textContent = "Sending message...";
+const respondMessage = async (response, responseData, messageElement) => {
   if (response.ok && responseData.success) {
     messageElement.textContent =
       responseData.message || "Message sent succesfully";
@@ -64,6 +62,9 @@ const respondMessage = async (response, responseData) => {
 
 contactForm.addEventListener("submit", async (evt) => {
   evt.preventDefault();
+  const messageElement = document.createElement("p");
+  messageElement.textContent = "Sending message...";
+  messageElement.style.color = "white";
 
   let infoObj = {
     name: nameInput.value,
@@ -85,7 +86,7 @@ contactForm.addEventListener("submit", async (evt) => {
       }
     );
     const responseData = await response.json();
-    respondMessage(response, responseData);
+    respondMessage(response, responseData, messageElement);
   } catch (error) {
     console.log("Error:", error);
     respondMessage({
