@@ -1,40 +1,3 @@
-// (function () {
-//   emailjs.init("AN4_T3f-H85b7z8dK");
-// })();
-
-// function sendEmail() {
-//   const from_name = document.getElementById("name").value.trim();
-//   const from_surname = document.getElementById("surname").value.trim();
-//   const message = document.getElementById("message").value.trim();
-//   const email = document.getElementById("email").value.trim();
-//   const phoneNum = document.getElementById("phone").value.trim();
-
-//   if (!from_name || !from_surname || !message || !email || !phoneNum) {
-//     document.getElementById("status-message").innerText =
-//       "Please fill out all fields.";
-//     return;
-//   }
-
-//   emailjs
-//     .send("service_iwr0hfb", "template_f6428q8", {
-//       to_name: "Ana",
-//       from_name: from_name,
-//       from_surname: from_surname,
-//       message: message,
-//       from_email: email,
-//       from_phone: phoneNum,
-//     })
-//     .then(() => {
-//       document.getElementById("status-message").innerText =
-//         "Email sent successfully!";
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//       document.getElementById("status-message").innerText =
-//         "Error sending email, we are having the problems with server, you can contact us on email or phone number below ";
-//     });
-// }
-
 const contactForm = document.getElementById("contact-form");
 const nameInput = document.getElementById("name");
 const surnameInput = document.getElementById("surname");
@@ -53,7 +16,6 @@ const respondMessage = async (response, responseData, messageElement) => {
   } else {
     messageElement.textContent = "An unexpected error occurred.";
   }
-  contactForm.appendChild(messageElement);
 
   setTimeout(() => {
     contactForm.removeChild(messageElement);
@@ -65,6 +27,7 @@ contactForm.addEventListener("submit", async (evt) => {
   const messageElement = document.createElement("p");
   messageElement.textContent = "Sending message...";
   messageElement.style.color = "white";
+  contactForm.appendChild(messageElement);
 
   let infoObj = {
     name: nameInput.value,
